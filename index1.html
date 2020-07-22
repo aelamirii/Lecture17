@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app = "ShoppingListApp">
+  <head>
+    <meta charset="utf-8">
+    <script src = "angular.min.js"></script>
+    <script src = "app1.js"></script>
+    <style>
+      body{ font-size : 1.2em}
+    </style>
+    <title>ng-repeat</title>
+  </head>
+  <body>
+    <h1>ng-repeat</h1>
+
+    <div ng-controller = "ShoppingListController">
+
+      <h3>List Items</h3>
+
+<!-- Shopping List # 1 -->
+      <!-- <ul>
+        <li ng-repeat = "item in ListItems1">{{item}}</li>
+      </ul> -->
+
+
+<!-- Shopping List # 2  -->
+<!--
+    <ul>
+      <li ng-repeat = "item in ListItems2">Buy {{item.quantity}}
+      of {{item.name}}(s)</li>
+    </ul> -->
+
+
+
+<!-- List Items 3  -->
+
+<input type="text" ng-model = "ListItems2[0].quantity">
+  <ul>
+    <li ng-repeat = "item in ListItems2">{{$index + 1}}.
+    Buy {{item.quantity}} of {{item.name}}(s)</li>
+  </ul>
+
+  <div>
+    <input  ng-model = "newItemName" placeholder="Item name">
+    <input  ng-model = "newItemQuantity" placeholder="Item quantity">
+    <button type="button" ng-click = "AddNewItem()">Add to List</button>
+  </div>
+
+
+  <h3>Lis Item 1</h3>
+  <input type="text" ng-model = "ListItems1[0]">
+  <ul>
+    <li ng-repeat = "item in ListItems1">{{item}}</li>
+  </ul>
+
+  <div>
+    <input type="text" ng-model = "Item1_Name" placeholder="Item Name">
+    <button type="button" ng-click = "AddnewItem1()">Add new Item</button>
+  </div>
+
+
+    </div>
+
+  </body>
+</html>
